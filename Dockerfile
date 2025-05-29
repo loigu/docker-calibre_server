@@ -1,7 +1,7 @@
 FROM alpine:edge
 
-# ENV MIRROR ap.edge.kernel.org
-ENV MIRROR mirrors.tuna.tsinghua.edu.cn
+ENV MIRROR=ap.edge.kernel.org
+#ENV MIRROR=mirrors.tuna.tsinghua.edu.cn
 
 # Testing: pamtester
 RUN sed -e "s/dl-cdn\.alpinelinux\.org/${MIRROR}/" -i /etc/apk/repositories
