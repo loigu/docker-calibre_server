@@ -1,0 +1,5 @@
+#!/bin/bash
+declare -a libs
+find  /library/ -iname metadata.db >/tmp/libs; while read lib; do lib=$(dirname "$lib") libs+=( "$lib" ); done </tmp/libs
+
+/usr/bin/calibre-server --disable-use-bonjour --disable-local-write "${libs[@]}"
